@@ -179,10 +179,27 @@ if st.button('Prediksi Profit'):
     features = pd.DataFrame([input_data])
     
     # Lakukan semua langkah preprocessing yang sama seperti saat pelatihan
+    #feature combination
     features['revenue_item'] = features['Sales'] / features['Quantity']
+
+    #log transform
     features['Sales'] = np.log1p(features['Sales'])
     features['Postal_code'] = np.log1p(features['Postal_code'])
     features['revenue_item'] = np.log1p(features['revenue_item'])
+
+    # encoding
+    le = LabelEncoder()
+    features['Ship_mode_emb'] = le.fit_transform(features['Ship_mode'])
+    features['Segment_emb'] = le.fit_transform(features['Segment'])
+    features['Country_emb'] = le.fit_transform(features['Country'])
+    features['City_emb'] = le.fit_transform(features['City'])
+    features['State_emb'] = le.fit_transform(features['State'])
+    features['Region_emb'] = le.fit_transform(features['Region'])
+    features['Category_emb'] = le.fit_transform(features['Category'])
+    features['Sub_Category_emb'] = le.fit_transform(features['Sub_Category'])
+
+    # Pilih fitur-fitur yang sudah diseleksi
+    features = features[selected_features]
     
     # Lakukan prediksi
     prediction_log = model.predict(features)
