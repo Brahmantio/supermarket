@@ -188,6 +188,7 @@ if st.button('Prediksi Profit'):
     features['revenue_item'] = np.log1p(features['revenue_item'])
 
     # encoding
+    from sklearn.preprocessing import LabelEncoder
     le = LabelEncoder()
     features['Ship_mode_emb'] = le.fit_transform(features['Ship_mode'])
     features['Segment_emb'] = le.fit_transform(features['Segment'])
