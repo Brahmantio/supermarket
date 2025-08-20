@@ -8,7 +8,7 @@ with open('selected_features.pkl', 'rb') as file:
     selected_features = pickle.load(file)
 
 # Muat model yang telah dilatih
-with open('supermarket', 'rb') as file:
+with open('supermarket.pkl', 'rb') as file:
     model = pickle.load(file)
 
 # Judul aplikasi
