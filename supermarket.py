@@ -4,11 +4,11 @@ import pickle
 import numpy as np
 
 # Muat daftar fitur yang telah disimpan
-with open('/Users/bramantiow/Downloads/selected_features.pkl', 'rb') as file:
+with open('selected_features.pkl', 'rb') as file:
     selected_features = pickle.load(file)
 
 # Muat model yang telah dilatih
-with open('/Users/bramantiow/Downloads/supermarket.pkl', 'rb') as file:
+with open('supermarket.pkl', 'rb') as file:
     model = pickle.load(file)
 
 # Judul aplikasi
