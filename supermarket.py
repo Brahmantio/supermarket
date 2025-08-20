@@ -12,7 +12,7 @@ with open('supermarket.pkl', 'rb') as file:
     model = pickle.load(file)
 
 # Judul aplikasi
-st.set_page_config(page_title="House Price Prediction", layout="centered", initial_sidebar_state="auto", page_icon="🏠")
+st.set_page_config(page_title="PT.Supermarket Sejahtera", layout="centered", initial_sidebar_state="auto", page_icon="🏣")
 st.title("""
 Prediksi Profit Supermarket
 \ndashboard was created by [Bramantio](https://www.linkedin.com/in/brahmantio-w/), here I want to try to introduce the results of my portfolio or my abilities in the field of data science. 
@@ -146,7 +146,7 @@ State = st.selectbox('State',['Kentucky', 'California', 'Florida', 'North Caroli
                 'District of Columbia', 'Kansas', 'Vermont', 'Maine',
                 'South Dakota', 'Idaho', 'North Dakota', 'Wyoming',
                 'West Virginia'])
-Postal_code = st.selectbox('Postal_code',
+Postal_code = st.number_input('Postal_code',
                            min_value=0,
                            step=1,)
 Region = st.radio('Region',['South', 'West', 'Central', 'East'])
